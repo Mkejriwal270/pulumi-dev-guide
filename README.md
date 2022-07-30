@@ -1,2 +1,2 @@
-# Pulumi Sample
-A repository with boiler-plate code for Pulumi IaaC
+# Pulumi Dev Guide
+A one-stop-shop to demistify and understand Pulumi
