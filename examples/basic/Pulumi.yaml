@@ -1,0 +1,6 @@
+name: aws-local
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Simple AWS resources configured using a local backend
