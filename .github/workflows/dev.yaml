@@ -7,6 +7,10 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./examples/conditional
+        
     steps:
 
       - name: Checkout
@@ -25,6 +29,5 @@ jobs:
         with:
           command: preview
           stack-name: dev
-          work-dir: conditional
         env:
           PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
