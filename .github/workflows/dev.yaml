@@ -10,11 +10,18 @@ jobs:
     defaults:
       run:
         working-directory: ./examples/conditional
-        
+
     steps:
 
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Setup AWS access
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::051126537531:role/pulumi-role-gh
+          role-session-name: pulumidevsession
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -29,5 +36,6 @@ jobs:
         with:
           command: preview
           stack-name: dev
+          cloud-url: pulumi-backend-mk
         env:
           PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}

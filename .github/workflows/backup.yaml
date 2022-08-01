@@ -10,11 +10,18 @@ jobs:
     defaults:
       run:
         working-directory: ./examples/conditional
-        
+
     steps:
 
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Setup AWS access
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::1234567890:role/pulumi-role-gh
+          role-session-name: pulumibackupsession
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Setup Python
         uses: actions/setup-python@v2
