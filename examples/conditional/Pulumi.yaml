@@ -1,6 +1,4 @@
 name: conditional
 runtime:
   name: python
-  options:
-    virtualenv: venv
 description: A python program to demonstrate conditional execution of pulumi programs
