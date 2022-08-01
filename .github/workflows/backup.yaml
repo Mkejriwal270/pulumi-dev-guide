@@ -2,7 +2,12 @@ name: Backup
 on:
   push:
     branches:
-      - main 
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+  
 jobs:
   deploy:
     name: Deploy
@@ -20,7 +25,6 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::051126537531:role/pulumi-role-gh
-          role-session-name: pulumibackupsession
           aws-region: us-east-1
 
       - name: Setup Python
