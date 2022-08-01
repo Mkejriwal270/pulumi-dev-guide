@@ -25,6 +25,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::051126537531:role/pulumi-role-gh
+          role-session-name: pulumibackupsession
           aws-region: us-east-1
 
       - name: Setup Python
@@ -40,6 +41,7 @@ jobs:
         with:
           command: preview
           stack-name: dev
+          cloud-url: s3://pulumi-backend-mk
           work-dir: ./examples/conditional
         env:
           PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
