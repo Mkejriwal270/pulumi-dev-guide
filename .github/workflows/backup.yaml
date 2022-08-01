@@ -19,9 +19,9 @@ jobs:
       - name: Setup AWS access
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::1234567890:role/pulumi-role-gh
+          role-to-assume: ${{ secrets.AWS_ROLE }}
           role-session-name: pulumibackupsession
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: us-east-1
 
       - name: Setup Python
         uses: actions/setup-python@v2
