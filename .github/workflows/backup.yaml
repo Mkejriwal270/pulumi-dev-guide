@@ -2,7 +2,7 @@ name: Backup
 on:
   push:
     branches:
-      = main 
+      - main 
 jobs:
   deploy:
     name: Deploy
