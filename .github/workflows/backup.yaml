@@ -7,7 +7,7 @@ on:
 permissions:
   id-token: write
   contents: read
-  
+
 jobs:
   deploy:
     name: Deploy
@@ -40,6 +40,6 @@ jobs:
         with:
           command: preview
           stack-name: dev
-          work-dir: conditional
+          work-dir: ./examples/conditional
         env:
           PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
