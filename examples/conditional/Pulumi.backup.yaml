@@ -2,3 +2,7 @@ encryptionsalt: v1:qVt2GyG+e/g=:v1:emrrhC+Webjo8wa7:fYN+ttXkFj7jjDi4bMyHJVI1+OKP
 config:
   aws:region: us-east-1
   conditional:name: backup
+  conditional:tasks:
+  - 1
+  - 2
+  - 3

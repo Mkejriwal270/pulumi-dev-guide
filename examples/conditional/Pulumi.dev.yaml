@@ -2,3 +2,6 @@ encryptionsalt: v1:L2YRCjcn9lc=:v1:PfELXCbWt4+NVt3c:Uza8v36TYRZ7HxY2pt93S1kKsMi7
 config:
   aws:region: us-east-1
   conditional:name: dev
+  conditional:tasks:
+  - 1
+  - 2
