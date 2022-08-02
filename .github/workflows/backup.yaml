@@ -45,3 +45,4 @@ jobs:
           work-dir: ./examples/conditional
         env:
           PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+          MOCKAPI_URL: ${{ secrets.MOCKAPI_URL }}
