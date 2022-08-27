@@ -7,7 +7,7 @@ config = pulumi.Config()
 name = config.require('name')
 
 # Create an AWS resource (S3 Bucket)
-bucket = aws.s3.Bucket('my-bucket')
+# bucket = aws.s3.Bucket('my-bucket')
 
 # ubuntu = aws.ec2.get_ami(most_recent=True,
 #     filters=[
@@ -29,4 +29,7 @@ bucket = aws.s3.Bucket('my-bucket')
 #     })
 
 # Export the name of the bucket
+
+
+
 pulumi.export('bucket_name', bucket.id)

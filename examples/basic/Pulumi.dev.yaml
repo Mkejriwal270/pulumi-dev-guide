@@ -1,2 +1,3 @@
 config:
   aws:region: us-east-1
+  aws-basic:vpcid: vpc-0665efb7de3911681
